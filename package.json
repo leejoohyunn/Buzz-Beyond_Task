@@ -17,6 +17,7 @@
   "description": "GraphQL API for managing KRW-USD exchange rates with MongoDB",
   "dependencies": {
     "@apollo/server": "^5.2.0",
+    "@apollo/subgraph": "^2.12.1",
     "dotenv": "^17.2.3",
     "graphql": "^16.12.0",
     "mongoose": "^9.0.0"

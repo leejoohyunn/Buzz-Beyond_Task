@@ -8,51 +8,49 @@
  */
 
 export const typeDefs = `#graphql
-  # 쿼리 타입: 데이터 조회
   type Query {
-    "환율조회: 소스 통화와 타겟 통화 간의 환율을 조회합니다"
-    getExchangeRate(src: String!, tgt: String!): ExchangeInfo
+    "환율조회"
+    getExchangeRate(src:String!, tgt:String!): ExchangeInfo
   }
 
-  # 뮤테이션 타입: 데이터 변경
   type Mutation {
-    "환율등록/수정: src, tgt, date 조합으로 upsert 작업을 수행합니다"
+    "환율등록, src, tgt, date에 대해서 upsert"
     postExchangeRate(info: InputUpdateExchangeInfo): ExchangeInfo
-    "환율삭제: 해당 일자의 해당 통화 간 환율을 삭제합니다"
+    "환율삭제, 해당일자의 해당 통화간 환율을 삭제"
     deleteExchangeRate(info: InputDeleteExchangeInfo): ExchangeInfo
   }
 
-  "환율 업데이트 정보 입력 타입"
+  "환율업데이트정보 Input"
   input InputUpdateExchangeInfo {
-    "소스통화 (예: krw, usd)"
+    "소스통화, krw, usd"
     src: String!
-    "타겟통화 (예: krw, usd)"
+    "타겟통화"
     tgt: String!
-    "환율 (소스통화 1단위당 타겟통화 가치)"
+    "환율"
     rate: Float!
-    "기준일 (YYYY-MM-DD), 값이 없으면 현재 날짜로 등록"
+    "기준일, 값이 없으면, 최신일자로 등록"
     date: String
   }
 
-  "환율 삭제 정보 입력 타입"
+  "환율삭제 Input"
   input InputDeleteExchangeInfo {
     "소스통화"
     src: String!
     "타겟통화"
     tgt: String!
-    "기준일 (YYYY-MM-DD)"
+    "기준일"
     date: String!
   }
 
-  "환율 정보 출력 타입"
-  type ExchangeInfo {
+  "환율정보"
+  type ExchangeInfo @key(fields: "src, tgt") {
     "소스통화"
     src: String!
     "타겟통화"
     tgt: String!
     "환율"
     rate: Float!
-    "기준일"
+    "기준일, 값이 없으면, 최신일자의 환율을 응답"
     date: String!
   }
 `;

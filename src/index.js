@@ -5,6 +5,8 @@
 
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
+import { buildSubgraphSchema } from '@apollo/subgraph';
+import { parse } from 'graphql';
 import dotenv from 'dotenv';
 import { connectDB } from './config/database.js';
 import { typeDefs } from './schema/typeDefs.js';
@@ -22,10 +24,16 @@ const startServer = async () => {
     // MongoDB 연결
     await connectDB();
 
-    // Apollo Server 생성 (GraphQL 스키마와 리졸버 등록)
-    const server = new ApolloServer({
-      typeDefs,
+    // Apollo Federation Subgraph 스키마 생성 (GraphQL 스키마와 리졸버 등록)
+    // @key 디렉티브 지원을 위해 buildSubgraphSchema 사용
+    const schema = buildSubgraphSchema({
+      typeDefs: parse(typeDefs),
       resolvers
+    });
+
+    // Apollo Server 생성
+    const server = new ApolloServer({
+      schema
     });
 
     // 서버 시작 (포트는 환경변수 또는 기본값 5110)
