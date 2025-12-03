@@ -1,0 +1,24 @@
+{
+  "name": "exchange-rate-api",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [
+    "graphql",
+    "mongodb",
+    "exchange-rate"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "GraphQL API for managing KRW-USD exchange rates with MongoDB",
+  "dependencies": {
+    "@apollo/server": "^5.2.0",
+    "dotenv": "^17.2.3",
+    "graphql": "^16.12.0",
+    "mongoose": "^9.0.0"
+  }
+}
