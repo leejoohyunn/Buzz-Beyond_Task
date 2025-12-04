@@ -43,7 +43,7 @@ exchange-rate-api/
 
 ## 2. 기술 스택 
 
-#### GraphQL
+### 2.1 GraphQL
 
 
 1. **유연한 데이터 요청**
@@ -69,7 +69,7 @@ exchange-rate-api/
    - 현대 웹 개발 트렌드 (Facebook, GitHub, Shopify 등 사용)
    - 실무에서 점점 더 많이 사용
 
-#### MongoDB
+### 2.2 MongoDB
 
 **관계형 DB(MySQL, PostgreSQL) 대신 MongoDB를 선택한 이유:**
 
@@ -88,7 +88,7 @@ exchange-rate-api/
    - 초반 학습이 상대적으로 쉬움
    - JavaScript 객체와 유사한 구조
 
-#### Apollo Server
+### 2.3 Apollo Server
 
 **직접 GraphQL 서버 구축 대신 Apollo Server 사용:**
 
