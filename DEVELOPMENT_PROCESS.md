@@ -65,16 +65,12 @@ exchange-rate-api/
    - Schema 정의로 입출력 타입 명확
    - 자동 문서화 (Apollo Sandbox)
 
-4. **학습 가치**
-   - 현대 웹 개발 트렌드 (Facebook, GitHub, Shopify 등 사용)
-   - 실무에서 점점 더 많이 사용
 
 ### 2.2 MongoDB
 
-**관계형 DB(MySQL, PostgreSQL) 대신 MongoDB를 선택한 이유:**
+**관계형 DB(MySQL, PostgreSQL) 대신 MongoDB 사용:**
 
 1. **유연한 스키마**
-   - 환율 데이터는 고정된 필드만 있어도 충분
    - JSON 형태로 저장하여 GraphQL과 자연스럽게 연동
 
 2. **빠른 개발**
