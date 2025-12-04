@@ -41,24 +41,10 @@ exchange-rate-api/
 
 ---
 
-## 2. 기술 스택 및 선정 이유
+## 2. 기술 스택 
 
-### 2.1 기술 스택
+#### GraphQL
 
-| 기술 | 버전 | 역할 |
-|------|------|------|
-| **Node.js** | 18+ | JavaScript 런타임 환경 |
-| **GraphQL** | 16.12.0 | API 쿼리 언어 |
-| **Apollo Server** | 5.2.0 | GraphQL 서버 프레임워크 |
-| **MongoDB** | - | NoSQL 데이터베이스 |
-| **Mongoose** | 9.0.0 | MongoDB ODM |
-| **dotenv** | 17.2.3 | 환경변수 관리 |
-
-### 2.2 선정 이유
-
-#### 왜 GraphQL인가?
-
-**REST API 대신 GraphQL을 선택한 이유:**
 
 1. **유연한 데이터 요청**
    ```graphql
@@ -83,7 +69,7 @@ exchange-rate-api/
    - 현대 웹 개발 트렌드 (Facebook, GitHub, Shopify 등 사용)
    - 실무에서 점점 더 많이 사용
 
-#### 왜 MongoDB인가?
+#### MongoDB
 
 **관계형 DB(MySQL, PostgreSQL) 대신 MongoDB를 선택한 이유:**
 
@@ -102,7 +88,7 @@ exchange-rate-api/
    - 초반 학습이 상대적으로 쉬움
    - JavaScript 객체와 유사한 구조
 
-#### 왜 Apollo Server인가?
+#### Apollo Server
 
 **직접 GraphQL 서버 구축 대신 Apollo Server 사용:**
 
